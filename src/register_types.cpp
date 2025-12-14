@@ -1,7 +1,7 @@
-// Include your classes, that you want to expose to Godot
+// Include your classes, that you want to expose to Godot   https://docs.godotengine.org/en/4.4/tutorials/scripting/gdextension/gdextension_cpp_example.html#introduction
 
 
-#include "SplashScreen.hpp"
+#include "splashscreen.hpp"
 #include <gdextension_interface.h>
 #include <godot_cpp/core/class_db.hpp>
 #include <godot_cpp/core/defs.hpp>
@@ -17,6 +17,7 @@ void initialize_gdextension_types(ModuleInitializationLevel p_level)
 
 	// Register your classes here, so they are available in the Godot editor and engine
 	GDREGISTER_CLASS(Splashscreen);
+	//ClassDB::register_class<Splashscreen>();
 }
 
 void uninitialize_gdextension_types(ModuleInitializationLevel p_level) {

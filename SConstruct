@@ -80,6 +80,10 @@ Run the following command to download godot-cpp:
 # Include godot-cpp SConstruct, passing all command-line arguments
 env = SConscript("godot-cpp/SConstruct", {"env": env, "customs": customs})
 
+# ---- Windows specific libraries (Desktop Duplication API) ----
+if env["platform"] == "windows":
+    env.Append(LIBS=["d3d11", "dxgi"])
+
 # Process GDExtension-specific options
 source_dirs = env['source_dirs'].split(',')   # Convert comma-separated string to list
 source_exts = env['source_exts'].split(',')   # Convert comma-separated string to list
