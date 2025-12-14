@@ -2,6 +2,7 @@ import os
 import sys
 import re
 import shutil
+from typing import Optional
 
 # Paths relative to script
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -13,7 +14,7 @@ SRC_DIR = os.path.join(PARENT_DIR, "src")
 renamed_paths = []  # tuples of (new_path, old_path)
 file_backups = {}   # path -> original content
 
-def sanitize_and_validate_filename(name: str) -> str | None:
+def sanitize_and_validate_filename(name: str) -> Optional[str]:
     cleaned = re.sub(r"\s+", "_", name.strip())
     cleaned = re.sub(r"[^a-zA-Z0-9_]", "", cleaned)
     if not cleaned or cleaned[0].isdigit():
