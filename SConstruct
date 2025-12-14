@@ -82,7 +82,7 @@ env = SConscript("godot-cpp/SConstruct", {"env": env, "customs": customs})
 
 # ---- Windows specific libraries (Desktop Duplication API) ----
 if env["platform"] == "windows":
-    env.Append(LIBS=["d3d11", "dxgi"])
+    env.Append(LIBS=["d3d11", "dxgi", "Gdi32", "User32"])
 
 # Process GDExtension-specific options
 source_dirs = env['source_dirs'].split(',')   # Convert comma-separated string to list

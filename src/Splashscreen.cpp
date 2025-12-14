@@ -20,8 +20,6 @@ godot::Ref<godot::ImageTexture> Splashscreen::Screenshot() {
     #ifdef _WIN32
 
         WindowsDesktopCapture windows;
-        if(windows.init()) {
-
             auto img = windows.capture_desktop_image();
             if (img.is_valid()) {
                 return godot::ImageTexture::create_from_image(img);
@@ -29,11 +27,6 @@ godot::Ref<godot::ImageTexture> Splashscreen::Screenshot() {
             else {
                 godot::print_line("Failed to Capture Desktop Image");
             }  
-
-        } 
-        else {
-            godot::print_line("Failed to initialize Windows Desktop Capture");
-        }
     #endif
     
     return nullptr;

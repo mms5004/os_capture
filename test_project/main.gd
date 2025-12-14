@@ -5,8 +5,8 @@ func _ready() -> void:
 
 func test_plugin_functionality()->void:
 	var test:Splashscreen = Splashscreen.new()
-	test.Screenshot()
 	
+	$Sprite2D.texture = test.Screenshot()
 	
 	
 	

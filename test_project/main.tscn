@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://hn8dh5y3yq6a"]
+[gd_scene load_steps=3 format=3 uid="uid://hn8dh5y3yq6a"]
 
 [ext_resource type="Script" uid="uid://gscsivoywwwo" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://bs6lbegjk7gmw" path="res://Capture d’écran 2025-10-12 002145.png" id="2_0xm2m"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_ig7tw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1331, 703)
+texture = ExtResource("2_0xm2m")
